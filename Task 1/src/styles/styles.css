@@ -1,0 +1,1065 @@
+body {
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+.form-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: fit-content;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.form-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.client-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.or-text { /* ✅ Styling for "or" */
+  margin: 0 10px;
+  font-size: 14px;
+  color: gray;
+}
+
+.new-client-btn {
+  background: #e7e7e7;
+  color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.new-client-btn:hover {
+  background: #d6d6d6;
+}
+
+.date-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  color: black;
+}
+
+.next-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.next-btn:hover {
+  background: #0056b3;
+}
+
+.back-btn:hover {
+  color: black;
+  transform: translateX(-3px);
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.progress-bar span {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.progress-bar span.active {
+  background: #007bff;
+}
+
+/* ✅ Mobile responsiveness */
+@media (max-width: 480px) {
+  .form-container {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+  }
+  
+  .client-row {
+    flex-direction: column;
+  }
+
+  .or-text {
+    margin: 5px 0;
+  }
+
+  .new-client-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .date-row {
+    flex-direction: column;
+  }
+
+  .form-navigation {
+    flex-direction: column;
+  }
+
+  .back-btn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .next-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+
+/* step 1 css */
+
+/* Align labels to the left */
+.form-label {
+  text-align: left;
+  display: block;
+  font-weight: 600;
+  text-decoration:wavy;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+/* Fix alignment and spacing */
+.step-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Hover effects and animations */
+.animated-input, .animated-textarea {
+  width: 90%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.animated-input:hover, .animated-textarea:hover {
+  border-color: #007bff;
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.3);
+}
+
+.animated-input:focus, .animated-textarea:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+/* Animation for heading */
+.fade-in {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adjust client row alignment */
+.client-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.spn{
+  text-align:center;
+  margin-top: 15px;
+}
+/* Add smooth transition on buttons */
+.new-client-btn {
+  background: #e7e7e7;
+  color: #333;
+  border: none;
+  padding: 10px;
+  margin-right: 17px;
+  width: fit-content;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease-in-out;
+}
+
+.new-client-btn:hover {
+  background: #d6d6d6;
+}
+
+/* Fix spacing for dates */
+.date-row {
+  display: flex;
+  width: 380px;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 480px) {
+  .client-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .or-text {
+    margin: 5px 0;
+  }
+
+  .new-client-btn {
+    width: 100%;
+  }
+
+  .date-row {
+    flex-direction: column;
+  }
+
+  .animated-input, .animated-textarea {
+    font-size: 16px;
+  }
+}
+
+
+/* step 2 css*/
+
+.subheading {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  gap: 5px;
+}
+
+.tab {
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  background: #e7e7e7;
+  border-radius: 6px;
+  min-width: 120px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.tab.active {
+  background: #007bff;
+  color: white;
+}
+
+.tab.disabled {
+  background: #f1f1f1;
+  cursor: not-allowed;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  text-align: left;
+  
+}
+
+.description {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+/* Input Groups */
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-group select, 
+.input-group input {
+  width: 48%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Fix alignment for checkboxes and text */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 10px; /* ✅ Ensures proper spacing */
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.small-input {
+  width: 50px;
+  text-align: center;
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* ✅ Ensure checkboxes align properly on mobile too */
+@media (max-width: 480px) {
+  .checkbox-label {
+    flex-wrap: wrap;
+  }
+
+  .small-input {
+    margin-top: 5px;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .form-container {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+  }
+
+  .tab-container {
+    flex-direction: column;
+  }
+
+  .tab {
+    width: 100%;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group select,
+  .input-group input {
+    width: 100%;
+  }
+
+  .checkbox-label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .small-input {
+    margin-top: 5px;
+  }
+}
+
+
+/* Step 3 Heading & Subheading */
+.step3-heading {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.step3-subheading {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 25px;
+}
+
+/* View Options */
+.view-options {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.view-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 120px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  font-size: 14px;
+  color: gray;
+  background: white;
+  position: relative;
+  line-gap-override: 10px;
+}
+
+/* Hover effect: scale up slightly and add shadow */
+.view-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+  border-color: #007bff;
+}
+
+/* Active (selected) option */
+.view-option.active {
+  border-color: #007bff;
+  color: black;
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* Click effect: subtle bounce */
+.view-option:active {
+  animation: bounce 0.2s ease-in-out;
+}
+
+@keyframes bounce {
+  0% { transform: scale(1.08); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1.08); }
+}
+
+/* Image inside options */
+.view-option img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Slight rotation effect on hover */
+.view-option:hover img {
+  transform: rotate(-5deg);
+}
+
+/* Ensure responsiveness */
+@media (max-width: 480px) {
+  .view-options {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .view-option {
+    width: 100%;
+  }
+}
+
+/* Step 4 Heading & Subheading */
+.step4-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.step4-subheading {
+  font-size: 12.5px;
+  color: gray;
+  margin-bottom: 25px;
+}
+
+/* Permission Options */
+.permission-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+.permission-option {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: white;
+  position: relative;
+  gap: 15px; 
+}
+
+/* Active (selected) option */
+.permission-option.active {
+  border-color: #007bff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* Text alignment fix */
+.permission-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.permission-content h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 15px;
+}
+
+.permission-content p {
+  margin-top: 5px; 
+  font-size: 14px;
+  text-align: left;
+  color: gray;
+  margin-left: 16px;
+}
+
+/* Icon styling */
+.permission-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect: Scale and shadow */
+.permission-option:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+  border-color: #007bff;
+}
+
+/* Bounce animation on click */
+.permission-option:active {
+  animation: bounce 0.2s ease-in-out;
+}
+
+@keyframes bounce {
+  0% { transform: scale(1.05); }
+  50% { transform: scale(0.98); }
+  100% { transform: scale(1.05); }
+}
+
+/* Hover effect on icon */
+.permission-option:hover .permission-icon {
+  transform: rotate(-5deg);
+}
+
+/* Ensure responsiveness */
+@media (max-width: 480px) {
+  .permission-option {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+
+/* Step 5 Heading & Subheading */
+.step5-heading {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.step5-subheading {
+  font-size: 17px;
+  color: rgb(178, 154, 154);
+  margin-right: 310px;
+  margin-bottom: 20px;
+  text-align: left;
+  align-items: left;
+  gap: 5px;
+}
+
+/* Task Input */
+.task-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: left;
+  text-align: left;
+}
+
+.task-input {
+  flex-grow: 1;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-input:hover, .task-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.task-add-btn {
+  padding: 12px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-add-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Task List */
+.task-list-container {
+  max-height: 280px;
+  overflow-y: auto;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* Task Item */
+.task-item {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0; /* ✅ Line added between tasks */
+  transition: background 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Task Item Hover Effect */
+.task-item:hover {
+  background: rgba(0, 123, 255, 0.1);
+}
+
+/* Task Checkbox */
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Task Text */
+.task-text {
+  flex-grow: 1;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-text.checked {
+  /* text-decoration: line-through; */
+  color: gray;
+}
+
+/* Task Delete Button */
+.task-delete-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-delete-btn:hover {
+  color: darkred;
+  transform: scale(1.1);
+}
+
+/* Scrollbar Styling */
+.task-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.task-list-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 123, 255, 0.3);
+  border-radius: 6px;
+}
+
+.task-list-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 480px) {
+  .task-input-container {
+    flex-direction: column;
+  }
+
+  .task-add-btn {
+    width: 100%;
+  }
+
+  .task-item {
+    padding: 10px;
+  }
+}
+
+/* Step 6 Heading & Subheading */
+.step6-heading {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.step6-subheading {
+  font-size: 16px;
+  color: rgb(144, 78, 78);
+  margin-right: 230px;
+  margin-bottom: 30px;
+  text-align: left;
+  align-items: left;
+  gap: 5px;
+}
+
+/* Name Input */
+.name-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.name-input {
+  flex-grow: 1;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.name-add-btn {
+  padding: 12px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.name-add-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Name List */
+.name-list-container {
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 10px;
+}
+
+/* Name Item */
+.name-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 12px;
+  margin-left: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.3s ease-in-out;
+}
+
+.name-item:hover {
+  background: rgba(0, 123, 255, 0.1);
+}
+
+/* Checkbox */
+.name-checkbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Name Text */
+.name-text {
+  flex-grow: 1;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.name-text.checked {
+  /* text-decoration: line-through; */
+  color: gray;
+}
+
+/* Delete Button (×) */
+.name-delete-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.name-delete-btn:hover {
+  color: darkred;
+  transform: scale(1.1);
+}
+
+/* Scrollbar Styling */
+.name-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.name-list-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 123, 255, 0.3);
+  border-radius: 6px;
+}
+
+.name-list-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 480px) {
+  .name-input-container {
+    flex-direction: column;
+  }
+
+  .name-add-btn {
+    width: 100%;
+  }
+
+  .name-item {
+    padding: 10px;
+  }
+}
+
+
+/* Close Button (Top Right Corner) */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #999;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+  color: #333;
+  transform: scale(1.2);
+}
+
+
+/* General Container Styling */
+.form-container {
+  width: 100%;
+  max-width: 500px; /* ✅ Keeps form box size consistent */
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Close Button (Top Right Corner) */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #999;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+  color: #333;
+  transform: scale(1.2);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .form-container {
+    max-width: 90%; 
+    padding: 20px;
+  }
+
+  .step-heading {
+    font-size: 20px; 
+  }
+
+  .step-subheading {
+    font-size: 13px; 
+  }
+
+  .name-input-container, .task-input-container {
+    flex-direction: column; 
+    gap: 8px;
+  }
+
+  .name-add-btn, .task-add-btn {
+    width: 100%; 
+  }
+
+  .name-item, .task-item {
+    padding: 10px;
+    flex-wrap: wrap; 
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    max-width: 95%; 
+    padding: 15px;
+  }
+
+  .close-btn {
+    font-size: 20px; 
+    top: 10px;
+    right: 10px;
+  }
+
+  .step-heading {
+    font-size: 18px;
+  }
+
+  .step-subheading {
+    font-size: 12px;
+  }
+
+  .name-item, .task-item {
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .name-checkbox, .task-checkbox {
+    width: 20px; 
+    height: 20px;
+  }
+
+  .form-navigation {
+    flex-direction: column; 
+    gap: 10px;
+  }
+
+  .next-btn, .back-btn {
+    width: 100%; 
+    text-align: center;
+  }
+}
+
+
