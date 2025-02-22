@@ -1,0 +1,379 @@
+/* General Reset */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #6a5acd, #ffffff);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main Container */
+.app-container {
+  width: 700px;
+  max-width: 1000px;
+  height: auto;
+  text-align: center;
+  position: relative;
+}
+
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 150px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+}
+
+.contact-us {
+  cursor: pointer;
+  text-align: right;
+  align-items: right;
+  /* margin-left: 300px; */
+}
+
+/* Progress Bar Container */
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-radius: 30px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 800px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Step */
+.progress-step {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  padding: 10px 0;
+  border-radius: 30px;
+  transition: 0.3s;
+  color: #a0a0a0;
+}
+
+/* Active Step */
+.progress-step.active {
+  background: linear-gradient(to right, #68a6fc, #4a90e2);
+  color: white;
+}
+
+/* Step Number */
+.step-number {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.progress-wrapper {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Active Step Number */
+.progress-step.active .step-number {
+  background: white;
+  color: #4a90e2;
+}
+
+/* Inactive Step Number */
+.progress-step:not(.active) .step-number {
+  background: #4a90e2;
+  color: white;
+}
+
+
+/* Form Box */
+.form-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Fields */
+.form-group-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container h3{
+  color: gray;
+  font-size: 17px;
+  margin-bottom: 0px;
+}
+
+.form-container h2{
+font-size: 26px;
+color: rgb(38, 35, 35);
+margin-top: 5px;
+margin-bottom: 0%;
+} 
+
+.form-container p{
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #715151;
+  padding: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px; /* Reduce gap above description text */
+  margin-bottom: 15px;
+  max-width: 65%; /* Ensure it doesn't stretch too much */
+
+}
+
+.form-group {
+  flex: 1;
+  margin: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+  margin-left: 30px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.back-login, .next-step {
+  padding: 10px 15px;
+  border: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.next-step:hover, .back-login:hover {
+  background-color: darkblue;
+}
+
+/* Reduce content size of Step 2 */
+.step2-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 400px; /* Limit the height to fit screen */
+  overflow-y: auto; /* Add scroll if necessary */
+}
+
+.step2-container h2{
+  margin-top: 0%;
+  margin-bottom: 0%;
+  font-family: sans-serif;
+  font-size: 25px;
+  color: #382b2b;
+}
+
+.step2-container h3{
+  margin-top: 0%;
+  margin-bottom: 2px;
+  font-size: 17px;
+  color: rgb(131, 84, 84);
+}
+
+.step2-container p{
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+.step2-des p{
+  text-align: left;
+  align-items: left;
+  color: rgb(151, 148, 143);
+  margin-right: 280px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+}
+
+.step2-form-group-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.step2-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.step2-form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+  text-align: left;
+  margin-right: 50px;
+  margin-left: 5px;
+}
+
+.step2-form-group input,
+.step2-form-group select {
+  max-width: 100%;
+  width: fit-content;
+  padding: 8px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  
+}
+
+/* Ensure navigation buttons stay aligned */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.prev-step, .next-step {
+  padding: 8px 12px;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  font-size: 14px;
+}
+
+.prev-step:hover, .next-step:hover {
+  background-color: #357bd8;
+}
+
+/* Align document section properly */
+.step2-document-section {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.step2-document-section h4 {
+  color: #4a90e2;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.step2-document-section p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.step2-document-item {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.step2-document-item input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  background-color: #f8f8f8;
+}
+
+.step2-select {
+  margin-left: 10px;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  background-color: white;
+}
+
+.step2-status {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.step2-status.correct {
+  color: green;
+}
+
+.step2-status.wrong {
+  color: red;
+}
+
+/* COI PDF Upload Section */
+.step2-coi-section {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.step2-coi-section h4 {
+  color: #4a90e2;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.step2-coi-section p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.step2-coi-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.step2-coi-item input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  background-color: #f8f8f8;
+}
+
+.step2-coi-item select {
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  background-color: white;
+}
